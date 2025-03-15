@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Relative Clauses Worksheet</title>
+    <style>
+        @media print {
+            @page {
+                margin: 0.5in;
+            }
+            body {
+                font-size: 12pt;
+            }
+            .practice-questions {
+                page-break-before: always;
+            }
+            .btn-check, .results-section, .selected-option {
+                display: none !important;
+            }
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.5;
+            color: #333;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        
+        .header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .student-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .info-field {
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-field span {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .info-field .line {
+            width: 200px;
+            border-bottom: 1px solid #333;
+            padding-left: 5px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 24pt;
+        }
+        
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+            font-size: 18pt;
+        }
+        
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .example {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .question {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        
+        .options {
+            margin-left: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .option {
+            padding: 8px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 4px;
+            margin: 2px;
+        }
+        
+        .option:hover {
+            background-color: #e9e9e9;
+        }
+        
+        .selected-option {
+            background-color: #d4ebf2;
+            font-weight: bold;
+        }
+        
+        .correct-answer {
+            background-color: #d4f2d4;
+            font-weight: bold;
+        }
+        
+        .incorrect-answer {
+            background-color: #f2d4d4;
+            text-decoration: line-through;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+        
+        .underline {
+            text-decoration: underline;
+        }
+        
+        .highlight {
+            background-color: #ffffcc;
+        }
+        
+        .btn-check {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: block;
+            width: 200px;
+        }
+        
+        .btn-check:hover {
+            background-color: #45a049;
+        }
+        
+        .results-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: none;
+        }
+        
+        .results-title {
+            font-size: 18pt;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .score {
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #4CAF50;
+        }
+        
+        .feedback {
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="student-info">
+            <div class="info-field">
+                <span>Name:</span>
+                <div class="line"></div>
+            </div>
+            <div class="info-field">
+                <span>Date:</span>
+                <div class="line"></div>
+            </div>
+        </div>
+        <h1>Relative Clauses</h1>
+    </div>
+
+    <section>
+        <h2>Part 1: Understanding Relative Clauses</h2>
+        
+        <p>Relative clauses are subordinate clauses that provide additional information about a noun or pronoun in the main clause. They are introduced by relative pronouns (who, whom, whose, which, that).</p>
+        
+        <h3>Relative Pronouns Reference Table</h3>
+        <table style="width:100%; border-collapse:collapse; margin-bottom:25px; border:1px solid #ccc;">
+            <tr style="background-color:#f2f2f2; font-weight:bold;">
+                <th style="border:1px solid #ccc; padding:8px; text-align:left;">Relative Pronoun</th>
+                <th style="border:1px solid #ccc; padding:8px; text-align:left;">Use For</th>
+                <th style="border:1px solid #ccc; padding:8px; text-align:left;">Function</th>
+                <th style="border:1px solid #ccc; padding:8px; text-align:left;">Example</th>
+            </tr>
+            <tr>
+                <td style="border:1px solid #ccc; padding:8px;"><strong>who</strong></td>
+                <td style="border:1px solid #ccc; padding:8px;">People</td>
+                <td style="border:1px solid #ccc; padding:8px;">Subject</td>
+                <td style="border:1px solid #ccc; padding:8px;">The woman <span class="highlight">who lives next door</span> is a doctor.</td>
+            </tr>
+            <tr>
+                <td style="border:1px solid #ccc; padding:8px;"><strong>whom</strong></td>
+                <td style="border:1px solid #ccc; padding:8px;">People</td>
+                <td style="border:1px solid #ccc; padding:8px;">Object</td>
+                <td style="border:1px solid #ccc; padding:8px;">The man <span class="highlight">whom we met yesterday</span> is her brother.</td>
+            </tr>
+            <tr>
+                <td style="border:1px solid #ccc; padding:8px;"><strong>that</strong></td>
+                <td style="border:1px solid #ccc; padding:8px;">People & Things</td>
+                <td style="border:1px solid #ccc; padding:8px;">Subject or Object<br><em>(defining clauses only)</em></td>
+                <td style="border:1px solid #ccc; padding:8px;">The car <span class="highlight">that I bought</span> is red.</td>
+            </tr>
+            <tr>
+                <td style="border:1px solid #ccc; padding:8px;"><strong>whose</strong></td>
+                <td style="border:1px solid #ccc; padding:8px;">People & Things</td>
+                <td style="border:1px solid #ccc; padding:8px;">Possession</td>
+                <td style="border:1px solid #ccc; padding:8px;">The student <span class="highlight">whose paper won</span> received a prize.</td>
+            </tr>
+            <tr>
+                <td style="border:1px solid #ccc; padding:8px;"><strong>which</strong></td>
+                <td style="border:1px solid #ccc; padding:8px;">Things & Animals</td>
+                <td style="border:1px solid #ccc; padding:8px;">Subject or Object</td>
+                <td style="border:1px solid #ccc; padding:8px;">The book <span class="highlight">which I read</span> was interesting.</td>
+            </tr>
+        </table>
+        
+        <div style="border:1px solid #ddd; background-color:#f9f9f9; padding:15px; margin-bottom:25px; border-radius:5px;">
+            <p style="margin-top:0;"><strong>Important Notes:</strong></p>
+            <ul style="margin-bottom:0;">
+                <li>"That" can replace "who," "whom," and "which" in defining relative clauses only</li>
+                <li>"That" cannot replace "whose" - there is no possessive form of "that"</li>
+                <li>"That" cannot be used in non-defining relative clauses (clauses with commas)</li>
+                <li>In informal spoken English, "who" is often used instead of "whom"</li>
+                <li>In informal English, the relative pronoun is sometimes omitted when it's the object of the verb (e.g., "The book I read" instead of "The book that/which I read")</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Rule 1: Defining Relative Clauses (Restrictive)</h3>
+            <p>Defining relative clauses provide essential information that identifies which person or thing we are talking about. They are <span class="bold">not separated by commas</span>.</p>
+            <div class="example">
+                <p>1. The book <span class="highlight">that I borrowed from the library</span> is overdue.</p>
+                <p>2. The woman <span class="highlight">who called earlier</span> wants to speak to you.</p>
+            </div>
+        </div>
+
+        <div>
+            <h3>Rule 2: Non-defining Relative Clauses (Non-restrictive)</h3>
+            <p>Non-defining relative clauses provide additional, non-essential information and are <span class="bold">separated by commas</span>. We cannot use "that" in non-defining clauses.</p>
+            <div class="example">
+                <p>1. My brother, <span class="highlight">who lives in Australia</span>, is visiting next month.</p>
+                <p>2. Paris, <span class="highlight">which is the capital of France</span>, is famous for its architecture.</p>
+            </div>
+        </div>
+
+        <div>
+            <h3>Rule 3: "Who" for People</h3>
+            <p>Use "who" to refer to people (as the subject of the relative clause).</p>
+            <div class="example">
+                <p>1. The teacher <span class="highlight">who teaches math</span> is very popular.</p>
+                <p>2. Anyone <span class="highlight">who wants to join</span> should sign up by Friday.</p>
+            </div>
+        </div>
+
+        <div>
+            <h3>Rule 4: "Whom" for People (Objects)</h3>
+            <p>Use "whom" to refer to people when they are the object of the verb in the relative clause. "Who" is often used in spoken English instead of "whom".</p>
+            <div class="example">
+                <p>1. The candidate <span class="highlight">whom we selected</span> declined the offer.</p>
+                <p>2. The students <span class="highlight">whom you met yesterday</span> are in my class.</p>
+            </div>
+        </div>
+
+        <div>
+            <h3>Rule 5: "Which" for Things</h3>
+            <p>Use "which" to refer to things and animals (in both defining and non-defining clauses).</p>
+            <div class="example">
+                <p>1. The car <span class="highlight">which broke down</span> has been repaired.</p>
+                <p>2. The movie, <span class="highlight">which won several awards</span>, was based on a true story.</p>
+            </div>
+        </div>
+
+        <div>
+            <h3>Rule 6: "That" for People and Things (Defining Only)</h3>
+            <p>Use "that" to refer to both people and things in defining relative clauses only. "That" cannot be used in non-defining clauses.</p>
+            <div class="example">
+                <p>1. The phone <span class="highlight">that I bought last week</span> is already broken.</p>
+                <p>2. The people <span class="highlight">that work here</span> are very friendly.</p>
+            </div>
+        </div>
+
+        <div>
+            <h3>Rule 7: "Whose" for Possession</h3>
+            <p>Use "whose" to show possession for both people and things.</p>
+            <div class="example">
+                <p>1. The student <span class="highlight">whose paper won the competition</span> received a scholarship.</p>
+                <p>2. I live in a building <span class="highlight">whose roof was damaged</span> in the storm.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="practice-questions">
+        <h2>Part 2: Practice Questions</h2>
+        <p>Choose the correct relative pronoun to complete each sentence. Click on your selected answer.</p>
+
+        <div id="questions-container">
+            <!-- Questions will be populated by JavaScript -->
+        </div>
+
+        <button id="btnCheckAnswers" class="btn-check">Check Answers</button>
+
+        <div id="results" class="results-section">
+            <div class="results-title">Your Results</div>
+            <div id="score" class="score"></div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </section>
+
+    <script>
+        // Define questions and answers
+        const questions = [
+            {
+                id: 1,
+                question: "The woman _____ lives next door is a doctor.",
+                options: ["who", "which", "whose", "whom"],
+                correctAnswer: "who"
+            },
+            {
+                id: 2,
+                question: "The movie _____ we watched last night was excellent.",
+                options: ["who", "which", "whose", "whom"],
+                correctAnswer: "which"
+            },
+            {
+                id: 3,
+                question: "The scientist _____ research changed our understanding of physics won a Nobel Prize.",
+                options: ["who", "which", "whose", "that"],
+                correctAnswer: "whose"
+            },
+            {
+                id: 4,
+                question: "Paris, _____ is the capital of France, attracts millions of tourists every year.",
+                options: ["who", "which", "that", "whose"],
+                correctAnswer: "which"
+            },
+            {
+                id: 5,
+                question: "The book _____ I lent you must be returned by Friday.",
+                options: ["who", "which", "that", "whose"],
+                correctAnswer: "that",
+                alternateAnswers: ["which"]
+            },
+            {
+                id: 6,
+                question: "The person _____ we interviewed yesterday has excellent qualifications.",
+                options: ["who", "which", "whom", "whose"],
+                correctAnswer: "whom"
+            },
+            {
+                id: 7,
+                question: "She lives in a house _____ windows face the ocean.",
+                options: ["who", "which", "whose", "whom"],
+                correctAnswer: "whose"
+            },
+            {
+                id: 8,
+                question: "The restaurant, _____ we had dinner last night, serves authentic Italian cuisine.",
+                options: ["which", "that", "whose", "whom"],
+                correctAnswer: "which"
+            },
+            {
+                id: 9,
+                question: "This is the place _____ I bought my new laptop.",
+                options: ["who", "which", "that", "whose"],
+                correctAnswer: "that",
+                alternateAnswers: ["which"]
+            },
+            {
+                id: 10,
+                question: "I still remember the moment _____ I met my best friend.",
+                options: ["who", "which", "that", "whose"],
+                correctAnswer: "that",
+                alternateAnswers: ["which"]
+            },
+            {
+                id: 11,
+                question: "The professor, _____ lectures are always interesting, has published a new book.",
+                options: ["who", "which", "whose", "whom"],
+                correctAnswer: "whose"
+            },
+            {
+                id: 12,
+                question: "The reasons _____ she gave for her absence were not convincing.",
+                options: ["who", "which", "that", "whose"],
+                correctAnswer: "that",
+                alternateAnswers: ["which"]
+            },
+            {
+                id: 13,
+                question: "The doctor, _____ treated my father, is a specialist in cardiology.",
+                options: ["who", "which", "that", "whom"],
+                correctAnswer: "who"
+            },
+            {
+                id: 14,
+                question: "The car _____ engine failed has been towed away.",
+                options: ["who", "which", "whose", "that"],
+                correctAnswer: "whose"
+            },
+            {
+                id: 15,
+                question: "The children _____ parents work at the hospital receive free health care.",
+                options: ["which", "that", "whose", "who"],
+                correctAnswer: "whose"
+            },
+            {
+                id: 16,
+                question: "She is the only person _____ I would trust with this information.",
+                options: ["who", "which", "that", "whom"],
+                correctAnswer: "whom",
+                alternateAnswers: ["that"]
+            },
+            {
+                id: 17,
+                question: "The town _____ we spent our vacation has beautiful architecture.",
+                options: ["whom", "which", "that", "whose"],
+                correctAnswer: "which",
+                alternateAnswers: ["that"]
+            },
+            {
+                id: 18,
+                question: "The package, _____ arrived this morning, contains your new phone.",
+                options: ["who", "which", "that", "what"],
+                correctAnswer: "which"
+            },
+            {
+                id: 19,
+                question: "Do you know the man _____ is talking to your sister?",
+                options: ["who", "which", "whose", "whom"],
+                correctAnswer: "who"
+            },
+            {
+                id: 20,
+                question: "This is the explanation _____ I couldn't attend the meeting.",
+                options: ["who", "which", "that", "whose"],
+                correctAnswer: "which",
+                alternateAnswers: ["that"]
+            },
+            {
+                id: 21,
+                question: "The painting, _____ was stolen from the museum, has been recovered.",
+                options: ["who", "which", "that", "whose"],
+                correctAnswer: "which"
+            },
+            {
+                id: 22,
+                question: "The teacher gave an award to the student _____ got the highest score.",
+                options: ["who", "which", "whom", "whose"],
+                correctAnswer: "who"
+            },
+            {
+                id: 23,
+                question: "The hotel _____ we stayed in had an amazing view of the mountains.",
+                options: ["which", "whom", "that", "whose"],
+                correctAnswer: "which",
+                alternateAnswers: ["that"]
+            },
+            {
+                id: 24,
+                question: "2023 was the year _____ they finally bought their dream house.",
+                options: ["whom", "which", "that", "whose"],
+                correctAnswer: "that",
+                alternateAnswers: ["which"]
+            },
+            {
+                id: 25,
+                question: "The company _____ I work for is expanding to Europe.",
+                options: ["who", "which", "that", "whose"],
+                correctAnswer: "which",
+                alternateAnswers: ["that"]
+            },
+            {
+                id: 26,
+                question: "My grandmother, _____ is 92, still goes swimming every day.",
+                options: ["who", "which", "that", "whom"],
+                correctAnswer: "who"
+            },
+            {
+                id: 27,
+                question: "The dog _____ bit the mailman has been taken to the pound.",
+                options: ["who", "which", "that", "whom"],
+                correctAnswer: "which",
+                alternateAnswers: ["that"]
+            },
+            {
+                id: 28,
+                question: "The building _____ roof collapsed in the storm was recently renovated.",
+                options: ["which", "that", "whose", "who"],
+                correctAnswer: "whose"
+            },
+            {
+                id: 29,
+                question: "I don't know the reason _____ he left the company.",
+                options: ["who", "which", "that", "whose"],
+                correctAnswer: "which",
+                alternateAnswers: ["that"]
+            },
+            {
+                id: 30,
+                question: "The team _____ won the championship trained for six months.",
+                options: ["who", "which", "that", "whose"],
+                correctAnswer: "which",
+                alternateAnswers: ["that"]
+            }
+        ];
+
+        // Function to render questions
+        function renderQuestions() {
+            const container = document.getElementById('questions-container');
+            
+            questions.forEach(q => {
+                const questionElement = document.createElement('div');
+                questionElement.className = 'question';
+                questionElement.dataset.id = q.id;
+                
+                questionElement.innerHTML = `
+                    <p>${q.id}. ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, index) => `
+                            <div class="option" data-option="${option}">
+                                ${String.fromCharCode(97 + index)}) ${option}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+                container.appendChild(questionElement);
+            });
+            
+            // Add event listeners to options
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from siblings
+                    const siblings = this.parentElement.querySelectorAll('.option');
+                    siblings.forEach(sib => sib.classList.remove('selected-option'));
+                    
+                    // Add selected class to this option
+                    this.classList.add('selected-option');
+                });
+            });
+        }
+
+        // Function to check answers
+        function checkAnswers() {
+            let correctCount = 0;
+            const totalQuestions = questions.length;
+            
+            questions.forEach(q => {
+                const questionElement = document.querySelector(`.question[data-id="${q.id}"]`);
+                const selectedOption = questionElement.querySelector('.selected-option');
+                
+                if (selectedOption) {
+                    const answer = selectedOption.dataset.option;
+                    
+                    // Check if answer is correct
+                    const isCorrect = answer === q.correctAnswer || 
+                                     (q.alternateAnswers && q.alternateAnswers.includes(answer));
+                    
+                    if (isCorrect) {
+                        correctCount++;
+                        selectedOption.classList.add('correct-answer');
+                        selectedOption.classList.remove('selected-option');
+                    } else {
+                        selectedOption.classList.add('incorrect-answer');
+                        selectedOption.classList.remove('selected-option');
+                        
+                        // Highlight the correct answer
+                        const correctOption = questionElement.querySelector(`.option[data-option="${q.correctAnswer}"]`);
+                        correctOption.classList.add('correct-answer');
+                    }
+                } else {
+                    // If no option selected, highlight the correct answer
+                    const correctOption = questionElement.querySelector(`.option[data-option="${q.correctAnswer}"]`);
+                    correctOption.classList.add('correct-answer');
+                }
+            });
+            
+            // Show results
+            const resultsSection = document.getElementById('results');
+            const scoreElement = document.getElementById('score');
+            const feedbackElement = document.getElementById('feedback');
+            
+            const percentage = Math.round((correctCount / totalQuestions) * 100);
+            scoreElement.textContent = `${correctCount} / ${totalQuestions} (${percentage}%)`;
+            
+            // Generate feedback based on score
+            let feedback;
+            if (percentage >= 90) {
+                feedback = "Excellent! You have a great understanding of relative clauses.";
+            } else if (percentage >= 70) {
+                feedback = "Good job! You understand most of the rules for relative clauses.";
+            } else if (percentage >= 50) {
+                feedback = "You're on the right track, but you might want to review some of the rules for relative clauses.";
+            } else {
+                feedback = "You should review the rules for relative clauses more carefully and try again.";
+            }
+            
+            feedbackElement.textContent = feedback;
+            resultsSection.style.display = 'block';
+            
+            // Disable the check button after checking
+            document.getElementById('btnCheckAnswers').disabled = true;
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderQuestions();
+            
+            // Add event listener to the check button
+            document.getElementById('btnCheckAnswers').addEventListener('click', checkAnswers);
+        });
+    </script>
+</body>
+</html>
